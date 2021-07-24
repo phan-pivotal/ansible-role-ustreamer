@@ -73,7 +73,7 @@
 
 - name: collect Ubuntu-specific required apt packages
   set_fact:
-    ustreamer_packages: "{{ ustreamer_packages }} + ['gcc', 'libjpeg8', 'libjpeg-dev', 'libjpeg-turbo8', 'libuuid1', 'libbsd0', 'make']"
+    ustreamer_packages: "{{ ustreamer_packages }} - ['git'] + ['gcc', 'libjpeg8', 'libjpeg-dev', 'libjpeg-turbo8', 'libuuid1', 'libbsd0', 'make']"
   when: ansible_distribution == 'Ubuntu'
 
 - name: install uStreamer pre-requisite packages
